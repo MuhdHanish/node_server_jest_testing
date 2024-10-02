@@ -9,7 +9,7 @@ app.post(`/users`, (req, res) => {
     if (!username || !password) {
         res.status(400).send({ message: "Username and Password is required." });
     }
-    res.send({ id: "1"});
+    res.send({ id: "1" });
 });
 
 module.exports = {
