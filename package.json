@@ -3,6 +3,7 @@
     "express": "^4.21.0"
   },
   "name": "node_server_jest",
+  "type": "module",
   "version": "1.0.0",
   "main": "server.js",
   "devDependencies": {},
