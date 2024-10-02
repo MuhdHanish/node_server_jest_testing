@@ -1,9 +1,12 @@
-import express from "express";
+const express = require("express");
 
 const app = express();
 
-app.get(`/test`, (req, res) => {
+
+app.post(`/users`, (req, res) => {
     res.sendStatus(200);
 });
 
-export { app };
+module.exports = {
+    app
+};
