@@ -4,7 +4,7 @@ const app = express();
 
 
 app.post(`/users`, (req, res) => {
-    res.send({});
+    res.send({ id: "1"});
 });
 
 module.exports = {
