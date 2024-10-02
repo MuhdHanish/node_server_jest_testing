@@ -5,13 +5,27 @@ describe('POST /users', () => {
     describe('when the username and password missing', () => {
         // should respond with a status code of 400
         it('should response a 400 status code', async () => {
-            const response = await request(app).post("/users").send({});
-            expect(response.statusCode).toBe(400);
+            const bodies = [
+                { username: "Jhon Doe" },
+                { password: "Jhon@123" },
+                {},
+            ];
+            for (const body of bodies) {
+                const response = await request(app).post("/users").send(body);
+                expect(response.statusCode).toBe(400);
+            }
         });
         // should respond with a json object containing message
         it('should respond with a json object containing message', async () => {
-            const response = await request(app).post("/users").send({});
-            expect(response.body.message).toBeDefined();
+            const bodies = [
+                { username: "Jhon Doe" },
+                { password: "Jhon@123" },
+                {},
+            ];
+            for (const body of bodies) {
+                const response = await request(app).post("/users").send(body);
+                expect(response.body.message).toBeDefined();
+            }
         });
     });
     describe('given a username and password', () => {
