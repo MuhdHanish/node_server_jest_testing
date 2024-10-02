@@ -8,7 +8,11 @@ describe('POST /users', () => {
             const response = await request(app).post("/users").send({});
             expect(response.statusCode).toBe(400);
         });
-
+        // should respond with a json object containing message
+        it('should respond with a json object containing message', async () => {
+            const response = await request(app).post("/users").send({});
+            expect(response.body.message).toBeDefined();
+        });
     });
     describe('given a username and password', () => {
         // should save teh username and password to the database
