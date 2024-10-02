@@ -15,7 +15,7 @@ describe('POST /users', () => {
         });
     });
     describe('given a username and password', () => {
-        // should save teh username and password to the database
+        // should save the username and password to the database
         // should respond a 200 status code
         it('should response a 200 status code', async () => {
             const response = await request(app).post("/users").send({
